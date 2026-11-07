@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TJ Screen Off</string>
+    <string name="admin_explanation">Allow TJ Screen Off to turn off the screen and lock your phone when you tap its icon. It can do nothing else.</string>
+    <string name="remove_app">Remove app</string>
+</resources>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+    <shortcut
+        android:shortcutId="remove_app"
+        android:enabled="true"
+        android:shortcutShortLabel="@string/remove_app"
+        android:shortcutLongLabel="@string/remove_app">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetPackage="com.tj.screenoff"
+            android:targetClass="com.tj.screenoff.UninstallActivity" />
+    </shortcut>
+</shortcuts>

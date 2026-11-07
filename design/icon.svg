@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <defs>
+    <radialGradient id="gDisc" cx="0.35" cy="0.25" r="0.95">
+      <stop offset="0" stop-color="#9be6ff"/>
+      <stop offset="0.28" stop-color="#3d9bff"/>
+      <stop offset="0.62" stop-color="#1253da"/>
+      <stop offset="1" stop-color="#07298a"/>
+    </radialGradient>
+    <linearGradient id="gSheen" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.9"/>
+      <stop offset="0.55" stop-color="#ffffff" stop-opacity="0.14"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="gRim" x1="0.15" y1="0.05" x2="0.85" y2="0.98">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.95"/>
+      <stop offset="0.35" stop-color="#ffffff" stop-opacity="0.12"/>
+      <stop offset="0.7" stop-color="#7fe9ff" stop-opacity="0.25"/>
+      <stop offset="1" stop-color="#b8f5ff" stop-opacity="0.85"/>
+    </linearGradient>
+    <linearGradient id="gGlass" x1="0.2" y1="0" x2="0.8" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.88"/>
+      <stop offset="0.55" stop-color="#ffffff" stop-opacity="0.45"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0.30"/>
+    </linearGradient>
+    <linearGradient id="gEdge" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="1"/>
+      <stop offset="0.5" stop-color="#ffffff" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#d6f6ff" stop-opacity="0.8"/>
+    </linearGradient>
+    <linearGradient id="gShackle" x1="0" y1="0" x2="1" y2="0.3">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.95"/>
+      <stop offset="0.5" stop-color="#ffffff" stop-opacity="0.45"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0.7"/>
+    </linearGradient>
+    <clipPath id="disc"><circle cx="512" cy="512" r="322"/></clipPath>
+    <filter id="b3" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="3"/></filter>
+    <filter id="b12" x="-30%" y="-60%" width="160%" height="220%"><feGaussianBlur stdDeviation="12"/></filter>
+    <filter id="b16" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="16"/></filter>
+    <filter id="b40" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="40"/></filter>
+  </defs>
+
+  <!-- soft drop shadow under the glass disc (kept inside the launcher's 72dp window) -->
+  <circle cx="512" cy="528" r="318" fill="#03195c" opacity="0.40" filter="url(#b16)"/>
+
+  <!-- glass disc body -->
+  <circle cx="512" cy="512" r="322" fill="url(#gDisc)"/>
+
+  <g clip-path="url(#disc)">
+    <!-- liquid colour pools -->
+    <ellipse cx="690" cy="730" rx="210" ry="135" fill="#19d6ff" opacity="0.50" filter="url(#b40)"/>
+    <ellipse cx="320" cy="360" rx="150" ry="105" fill="#ffffff" opacity="0.22" filter="url(#b40)"/>
+    <!-- bottom caustic / reflected light -->
+    <ellipse cx="512" cy="805" rx="215" ry="58" fill="#c4f7ff" opacity="0.50" filter="url(#b12)"/>
+    <!-- top glass sheen -->
+    <ellipse cx="512" cy="258" rx="252" ry="130" fill="url(#gSheen)"/>
+  </g>
+
+  <!-- rim light -->
+  <circle cx="512" cy="512" r="319" fill="none" stroke="url(#gRim)" stroke-width="6"/>
+
+  <!-- lock: shadow -->
+  <g transform="translate(0,6)" opacity="0.45" filter="url(#b12)">
+    <path d="M427 490 V445 A85 85 0 0 1 597 445 V490" fill="none" stroke="#04195a" stroke-width="40"/>
+    <rect x="377" y="490" width="270" height="215" rx="56" fill="#04195a"/>
+  </g>
+
+  <!-- lock: translucent white glass -->
+  <g transform="translate(0,-16)">
+    <path d="M427 490 V445 A85 85 0 0 1 597 445 V490" fill="none" stroke="url(#gShackle)" stroke-width="40"/>
+    <path d="M427 490 V445 A85 85 0 0 1 597 445 V490" fill="none" stroke="#ffffff" stroke-opacity="0.5" stroke-width="6" transform="translate(-12,-2)" filter="url(#b3)"/>
+    <rect x="377" y="490" width="270" height="215" rx="56" fill="url(#gGlass)"/>
+    <rect x="379" y="492" width="266" height="211" rx="54" fill="none" stroke="url(#gEdge)" stroke-width="5"/>
+    <!-- glossy top edge on the body -->
+    <rect x="410" y="502" width="204" height="12" rx="6" fill="#ffffff" opacity="0.6" filter="url(#b3)"/>
+    <!-- keyhole, engraved look -->
+    <circle cx="512" cy="577" r="28" fill="#0a3aa8" opacity="0.62"/>
+    <rect x="500" y="590" width="24" height="62" rx="12" fill="#0a3aa8" opacity="0.62"/>
+  </g>
+</svg>
